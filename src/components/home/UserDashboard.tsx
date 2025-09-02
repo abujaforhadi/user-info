@@ -5,15 +5,12 @@ import {
   Search,
   Grid3X3,
   List,
-  Filter,
-  TrendingUp,
-  Activity,
+ 
   Users as UsersIcon,
   Loader2
 } from 'lucide-react';
 import { Input } from '@/components/ui/input';
 import { Button } from '@/components/ui/button';
-import { Card, CardContent } from '@/components/ui/card';
 import type { User } from '@/APIs/api';
 import Pagination from './Pagination';
 import UserCard from './UserCard';
