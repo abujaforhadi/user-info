@@ -56,6 +56,7 @@ export default function DashboardPage() {
           loading={loading}
           viewMode={viewMode}
           setViewMode={setViewMode}
+            onUserClick={() => {}}
         />
       </div>
     </div>
