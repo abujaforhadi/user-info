@@ -1,20 +1,19 @@
-'use client';
+"use client";
 
-import { motion } from 'framer-motion';
+import { motion } from "framer-motion";
 import {
   Search,
   Grid3X3,
   List,
- 
   Users as UsersIcon,
-  Loader2
-} from 'lucide-react';
-import { Input } from '@/components/ui/input';
-import { Button } from '@/components/ui/button';
-import type { User } from '@/APIs/api';
-import Pagination from './Pagination';
-import UserCard from './UserCard';
-import UserListItem from './UserListItem';
+  Loader2,
+} from "lucide-react";
+import { Input } from "@/components/ui/input";
+import { Button } from "@/components/ui/button";
+import type { User } from "@/APIs/api";
+import Pagination from "./Pagination";
+import UserCard from "./UserCard";
+import UserListItem from "./UserListItem";
 
 interface Props {
   users: User[];
@@ -25,8 +24,8 @@ interface Props {
   setCurrentPage: (p: number) => void;
   onUserClick: (u: User) => void;
   loading: boolean;
-  viewMode: 'grid' | 'list';
-  setViewMode: (m: 'grid' | 'list') => void;
+  viewMode: "grid" | "list";
+  setViewMode: (m: "grid" | "list") => void;
 }
 
 export default function UserDashboard({
@@ -38,7 +37,7 @@ export default function UserDashboard({
   setCurrentPage,
   onUserClick,
   loading,
-  
+
   viewMode,
   setViewMode,
 }: Props) {
@@ -71,13 +70,13 @@ export default function UserDashboard({
                 <div className="absolute -top-1 -right-1 w-4 h-4 bg-green-500 rounded-full"></div>
               </div>
               <div>
-                <h1 className=" text-4xl font-bold text-gray-900 text-center">User Management</h1>
+                <h1 className=" text-4xl font-bold text-gray-900 text-center">
+                  User Management
+                </h1>
                 <p className="text-gray-600">Enterprise Dashboard</p>
               </div>
             </motion.div>
           </div>
-
-          
         </div>
 
         <motion.div
@@ -98,20 +97,19 @@ export default function UserDashboard({
 
           <div className="flex items-center space-x-2">
             <Button
-              variant={viewMode === 'grid' ? 'default' : 'outline'}
+              variant={viewMode === "grid" ? "default" : "outline"}
               size="sm"
-              onClick={() => setViewMode('grid')}
+              onClick={() => setViewMode("grid")}
             >
               <Grid3X3 className="w-4 h-4" />
             </Button>
             <Button
-              variant={viewMode === 'list' ? 'default' : 'outline'}
+              variant={viewMode === "list" ? "default" : "outline"}
               size="sm"
-              onClick={() => setViewMode('list')}
+              onClick={() => setViewMode("list")}
             >
               <List className="w-4 h-4" />
             </Button>
-            
           </div>
         </motion.div>
       </motion.div>
@@ -122,7 +120,7 @@ export default function UserDashboard({
             animate={{ rotate: 360, scale: [1, 1.1, 1] }}
             transition={{
               rotate: { duration: 2, repeat: Infinity, ease: "linear" },
-              scale: { duration: 1, repeat: Infinity }
+              scale: { duration: 1, repeat: Infinity },
             }}
             className="relative"
           >
@@ -133,17 +131,31 @@ export default function UserDashboard({
       )}
 
       {!loading && (
-        <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 0.6, delay: 0.3 }}>
-          {viewMode === 'grid' ? (
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 0.6, delay: 0.3 }}
+        >
+          {viewMode === "grid" ? (
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 mb-12">
               {users.map((u, i) => (
-                <UserCard key={u.id} user={u} index={i} onClick={onUserClick} />
+                <UserCard
+                  key={u.id}
+                  user={u}
+                  index={i}
+                  onUserClick={onUserClick}
+                />
               ))}
             </div>
           ) : (
             <div className="space-y-4 mb-12">
               {users.map((u, i) => (
-                <UserListItem key={u.id} user={u} index={i} onClick={onUserClick} />
+                <UserListItem
+                  key={u.id}
+                  user={u}
+                  index={i}
+                  onClick={onUserClick}
+                />
               ))}
             </div>
           )}
@@ -151,7 +163,11 @@ export default function UserDashboard({
       )}
 
       {!loading && totalPages > 1 && (
-        <Pagination currentPage={currentPage} totalPages={totalPages} onPageChange={setCurrentPage} />
+        <Pagination
+          currentPage={currentPage}
+          totalPages={totalPages}
+          onPageChange={setCurrentPage}
+        />
       )}
     </motion.div>
   );
