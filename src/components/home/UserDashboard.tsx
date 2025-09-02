@@ -25,7 +25,6 @@ interface Props {
   setCurrentPage: (p: number) => void;
   onUserClick: (u: User) => void;
   loading: boolean;
-  totalUsers: number;
   viewMode: 'grid' | 'list';
   setViewMode: (m: 'grid' | 'list') => void;
 }
@@ -39,7 +38,7 @@ export default function UserDashboard({
   setCurrentPage,
   onUserClick,
   loading,
-  totalUsers,
+  
   viewMode,
   setViewMode,
 }: Props) {

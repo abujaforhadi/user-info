@@ -35,8 +35,6 @@ export default function UserDetails({ user }: { user: User }) {
   const seed = encodeURIComponent(user.name);
   const avatarUrl = `https://api.dicebear.com/9.x/pixel-art/svg?seed=${seed}`;
 
-  
-
   const formatAddress = (address: User["address"]) =>
     `${address.suite} ${address.street}, ${address.city} ${address.zipcode}`;
 
@@ -50,7 +48,6 @@ export default function UserDetails({ user }: { user: User }) {
       >
         <Avatar className="h-20 w-20 ring-4 ring-primary/30">
           <AvatarImage src={avatarUrl} alt={`${user.name} avatar`} />
-          
         </Avatar>
 
         <div className="flex-1">
@@ -64,7 +61,11 @@ export default function UserDetails({ user }: { user: User }) {
       </motion.div>
 
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-        <motion.div initial={{ opacity: 0, x: -20 }} animate={{ opacity: 1, x: 0 }} transition={{ delay: 0.2 }}>
+        <motion.div
+          initial={{ opacity: 0, x: -20 }}
+          animate={{ opacity: 1, x: 0 }}
+          transition={{ delay: 0.2 }}
+        >
           <Card className="p-6 bg-gradient-card backdrop-blur-sm border-glass-border">
             <h3 className="text-lg font-semibold mb-4 flex items-center">
               <Mail className="h-5 w-5 mr-2 text-primary" />
@@ -94,14 +95,20 @@ export default function UserDetails({ user }: { user: User }) {
           </Card>
         </motion.div>
 
-        <motion.div initial={{ opacity: 0, x: 20 }} animate={{ opacity: 1, x: 0 }} transition={{ delay: 0.3 }}>
+        <motion.div
+          initial={{ opacity: 0, x: 20 }}
+          animate={{ opacity: 1, x: 0 }}
+          transition={{ delay: 0.3 }}
+        >
           <Card className="p-6 bg-gradient-card backdrop-blur-sm border-glass-border">
             <h3 className="text-lg font-semibold mb-4 flex items-center">
               <MapPin className="h-5 w-5 mr-2 text-primary" />
               Address
             </h3>
             <div className="space-y-2">
-              <p className="text-sm text-foreground">{formatAddress(user.address)}</p>
+              <p className="text-sm text-foreground">
+                {formatAddress(user.address)}
+              </p>
               <div className="pt-2 text-xs text-muted-foreground">
                 <p>Coordinates:</p>
                 <p>Lat: {user.address.geo.lat}</p>
@@ -111,7 +118,12 @@ export default function UserDetails({ user }: { user: User }) {
           </Card>
         </motion.div>
 
-        <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.4 }} className="md:col-span-2">
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.4 }}
+          className="md:col-span-2"
+        >
           <Card className="p-6 bg-gradient-card backdrop-blur-sm border-glass-border">
             <h3 className="text-lg font-semibold mb-4 flex items-center">
               <Briefcase className="h-5 w-5 mr-2 text-primary" />
@@ -124,7 +136,7 @@ export default function UserDetails({ user }: { user: User }) {
               </div>
               <div className="pl-7">
                 <p className="text-sm text-muted-foreground italic">
-                  "{user.company.catchPhrase}"
+                  &quot;{user.company.catchPhrase}&quot;
                 </p>
                 <p className="text-xs text-muted-foreground mt-1">
                   Business: {user.company.bs}
