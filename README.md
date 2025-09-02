@@ -1,36 +1,121 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+
+# User Dashboard - Next.js App
+
+A modern **User Dashboard** application built with **Next.js** and **TypeScript**.  
+This app fetches user data from an API, displays it in a searchable and paginated list, and allows viewing detailed user information. Animations are added with **Framer Motion**, making the UI interactive and dynamic.
+
+---
+
+## Live Demo
+
+[https://user-info23.vercel.app/](https://user-info23.vercel.app/)
+
+---
+
+## Features
+
+- **User List Page**
+  - Displays a paginated list of users.
+  - Fetches data from [JSONPlaceholder](https://jsonplaceholder.typicode.com/users).
+- **Search & Filter**
+  - Filter users by name or email in real-time.
+- **User Details Page**
+  - Click a user to view full details including email, address, and company info.
+- **Pagination**
+  - Limits number of users displayed per page for easy navigation.
+- **Responsive Design**
+  - Works on mobile, tablet, and desktop devices.
+- **Animations**
+  - Smooth hover and page transition animations using **Framer Motion**.
+  - Optionally, 3D effects can be added using **Three.js**.
+
+---
+
+## Technologies Used
+
+- **Next.js 15** – React framework with SSR support  
+- **TypeScript** – Strongly typed JavaScript  
+- **React** – Component-based UI  
+- **Framer Motion** – Animations & transitions  
+- **Tailwind CSS** – Styling and layout  
+- **JSONPlaceholder** – Fake API for users data  
+- **Vercel** – Deployment platform  
+
+---
 
 ## Getting Started
 
-First, run the development server:
+### 1. Clone the repository
+
+```bash
+git clone https://github.com/abujaforhadi/user-info.git
+cd user-info
+````
+
+### 2. Install dependencies
+
+```bash
+npm install
+# or
+yarn install
+```
+
+### 3. Run the development server
 
 ```bash
 npm run dev
 # or
 yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open [http://localhost:3000](http://localhost:3000) to view the app.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+---
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## Project Structure
 
-## Learn More
+```
+src/
+├─ components/     # UI components like UserCard, UserListItem, Pagination
+├─ App/          # Next.js App (index.tsx, users/[id].tsx)
+├─ APIs/           # API helpers (fetch users)
+├─ styles/         # Tailwind & global CSS
+```
 
-To learn more about Next.js, take a look at the following resources:
+---
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Deployment
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+The app is hosted live on **Vercel**:
 
-## Deploy on Vercel
+[https://user-info23.vercel.app/](https://user-info23.vercel.app/)
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+---
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## Contributing
+
+1. Fork the repo
+2. Create a feature branch: `git checkout -b feature/YourFeature`
+3. Commit your changes: `git commit -m 'Add new feature'`
+4. Push the branch: `git push origin feature/YourFeature`
+5. Open a Pull Request
+
+---
+
+## License
+
+This project is licensed under the **MIT License**.
+
+---
+
+## Contact
+
+GitHub: [https://github.com/abujaforhadi](https://github.com/abujaforhadi)
+
+```
+
+---
+
+If you want, I can also **make a “fancy” GitHub-ready README** with **badges (Next.js, TypeScript, Vercel, License), animated GIF preview of your dashboard, and 3D mention** so it looks professional for submission.  
+
+```
