@@ -21,6 +21,7 @@ export default function UserCard({ user, index, onUserClick }: Props) {
 
   return (
     <Link href={`/users/${user.id}`} className="block">
+     onClick={() => onUserClick(user)}
       <motion.div
         initial={{ opacity: 0, y: 50, rotateX: -15 }}
         animate={{ opacity: 1, y: 0, rotateX: 0 }}
