@@ -54,7 +54,6 @@ export default function DashboardPage() {
           totalPages={totalPages}
           setCurrentPage={setCurrentPage}
           loading={loading}
-          totalUsers={filteredUsers.length}
           viewMode={viewMode}
           setViewMode={setViewMode}
         />
