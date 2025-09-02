@@ -11,9 +11,11 @@ import type { User } from "@/APIs/api";
 interface Props {
   user: User;
   index: number;
+  onUserClick: (u: User) => void;
+
 }
 
-export default function UserCard({ user, index }: Props) {
+export default function UserCard({ user, index, onUserClick }: Props) {
   const seed = encodeURIComponent(user.name);
   const avatarUrl = `https://api.dicebear.com/9.x/pixel-art/svg?seed=${seed}`;
 
